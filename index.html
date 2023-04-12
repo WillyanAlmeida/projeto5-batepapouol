@@ -9,24 +9,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BATE PAPO UOL</title>
 </head>
-<header>
-    <div class="topo">
-        <img src="./img/logo.png" alt="">
-        <ion-icon name="people"></ion-icon>
-    </div>
-    
-</header>
+
+
 
 <body>
+    <div class="entrar">
+        <img src="./img/logo.png">   
+        <input type="text" class="entername"  placeholder="digite seu nome" />
+        <button onclick="entrar()">Entrar</button> 
+    </div>
+
+
+
+    <header>
+        <div class="topo">
+            <img src="./img/logo.png" alt="">
+            <ion-icon name="people"></ion-icon>
+        </div>
+        
+    </header>
+    
+    <main>
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+    </main>
+    <footer>
+        <div class="footer">
+            <textarea type="text" class="msg" placeholder="Escreva aqui..."></textarea>
+            <ion-icon name="paper-plane-outline" onclick="sendmsg()"></ion-icon>
+        </div>
+    </footer>
     
 
-    <script src="./script.js"></script>
+
+
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+    
 </body>
-<footer>
-    <div class="footer">
-        <textarea type="text" id="txtBusca" placeholder="Escreva aqui..."></textarea>
-        <ion-icon name="paper-plane-outline"></ion-icon>
-    </div>
-</footer>
 </html>
