@@ -1,5 +1,6 @@
 axios.defaults.headers.common['Authorization'] = 'hrCVia1hqaWes5Q2Nv7VAikS';
 let sendname;
+let msgserver = [];
 
 function entrar() {
 
@@ -32,11 +33,43 @@ function entradaok() {
     batepapo.classList.add('escondido')
     console.log("entradaok");
     const inter = setInterval(manter, 4000);
+    getmsg();
+}
+
+function getmsg(){
+    console.log('get msg')
+    
+    const msg = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages');
+    msg.then(rendermsg);
+    
 
 
+}
 
+function rendermsg(msg){ 
+    msgserver = msg.data;
+    const ulmsg = document.querySelector('.mensagens');
+    ulmsg.innerHTML = '';
 
+    // percorrer a minha lista de receitas
+    for( let i = 0; i < msgserver.length; i++){
+        // pergar receita por receita
+        let msg = msgserver[i];
+        
+        if(msgserver[i].type==="status"){
+        ulmsg.innerHTML += `
+            <li class='status'>
+            <h3><p class='time'>${msg.time}&nbsp; </p> <p class='from'> ${msg.from}&nbsp;</p><p class='txt'>${msg.text}&nbsp;</p></h3>                
+            </li>
+        `;}else{
+            ulmsg.innerHTML += `
+            <li class='msgchat'>
+            <h3><p class='time'>${msg.time} </p> <p class='from'> ${msg.from} para ${msg.to}</p><p class='txt'>${msg.text}</p></h3>                
+            </li>
+        `;
 
+        }
+    }
 }
 
 function negado(erro) {
