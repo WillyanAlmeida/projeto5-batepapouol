@@ -13,7 +13,7 @@
 
 
 <body>
-    <div class="entrar">
+    <div  class="entrar" >
         <img src="./img/logo.png">   
         <input type="text" class="entername"  placeholder="digite seu nome" />
         <button onclick="entrar()">Entrar</button> 
@@ -30,13 +30,13 @@
     </header>
     
     <main>
-        <ul class="mensagens">
+        <ul id="Box" class="mensagens">
            
         </ul>
 
 
 
-
+           
 
 
 
@@ -44,7 +44,7 @@
     </main>
     <footer>
         <div class="footer">
-            <textarea type="text" class="msg" placeholder="Escreva aqui..."></textarea>
+            <textarea type="text" class="caixa" placeholder="Escreva aqui..." onkeydown.enter="sendmsg()"></textarea>
             <ion-icon name="paper-plane-outline" onclick="sendmsg()"></ion-icon>
         </div>
     </footer>
