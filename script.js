@@ -1,15 +1,12 @@
 axios.defaults.headers.common['Authorization'] = 'hrCVia1hqaWes5Q2Nv7VAikS';
-let sendname, nomevalue,intermanter, intergetmsg;
+let sendname, nomevalue, intermanter, intergetmsg;
 let msgserver = [];
 let endboxmsg = 0;
-
 
 function entrar() {
     nomevalue = document.querySelector('.entername').value;
     sendname = { name: nomevalue };
-
     const entrar = axios.post('https://mock-api.driven.com.br/api/vm/uol/participants', sendname);
-    console.log(entrar);
     entrar.then(entradaok);
     entrar.catch(negado);
 }
@@ -23,20 +20,14 @@ function manter() {
 function entradaok() {
     const batepapo = document.querySelector('.entrar');
     batepapo.classList.add('escondido')
-    console.log("entradaok");
     intermanter = setInterval(manter, 5000);
-
-    
     intergetmsg = setInterval(getmsg, 3000);
     getmsg();
 }
 
 function getmsg() {
-    console.log('get msg')
-
     const msg = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages');
     msg.then(rendermsg);
-    
 }
 
 function rendermsg(msg) {
@@ -44,12 +35,10 @@ function rendermsg(msg) {
     const ulmsg = document.querySelector('.mensagens');
     ulmsg.innerHTML = '';
     for (let i = 0; i < msgserver.length; i++) {
-
         let msg = msgserver[i];
-
         if (msgserver[i].type === "status") {
             ulmsg.innerHTML += `
-            <li class='status'>
+            <li class='status' data-test="message">
                 <h3><p>
                     <span class='time'>${msg.time}&nbsp;</span>
                     <span class='from'> ${msg.from}&nbsp;</span>
@@ -59,7 +48,7 @@ function rendermsg(msg) {
                 `;
         } else {
             ulmsg.innerHTML += `
-            <li class='msgchat'>
+            <li class='msgchat' data-test="message">
                 <h3><p>
                     <span class='time'>${msg.time}&nbsp;</span>
                     <span class='from'> ${msg.from}&nbsp;</span>
@@ -79,8 +68,7 @@ function rendermsg(msg) {
 
 function negado(erro) {
     alert('ja existe usuário com este nome. Tente outro nome de usuário')
-    console.log("negado")
-}
+    }
 
 function manterstatus() {
     console.log("conectado");
@@ -88,18 +76,18 @@ function manterstatus() {
 
 function sendmsg() {
     const msg = document.querySelector('.caixa').value;
-    if(msg!=""){
-    sendmsg1 = 
-    {
-        from: nomevalue,
-        to: "Todos",
-        text: msg,
-        type: "message"
-    };
-   
-    const waitsendmsg = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', sendmsg1);
-    waitsendmsg.then(msgenviada);
-    waitsendmsg.catch(erroconect);}
+    if (msg != "") {
+        sendmsg1 =
+        {
+            from: nomevalue,
+            to: "Todos",
+            text: msg,
+            type: "message"
+        };
+        const waitsendmsg = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', sendmsg1);
+        waitsendmsg.then(msgenviada);
+        waitsendmsg.catch(erroconect);
+    }
 }
 
 function msgenviada() {
@@ -116,7 +104,6 @@ function erroconect() {
     clearInterval(intermanter);
     const ulmsg = document.querySelector('.mensagens');
     ulmsg.innerHTML = '';
-
 }
 
 
