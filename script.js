@@ -67,7 +67,7 @@ function rendermsg(msg) {
 }
 
 function negado(erro) {
-    alert('ja existe usuário com este nome. Tente outro nome de usuário')
+    alert('ja existe usuário com este nome. Tente outro nome de usuário');
     }
 
 function manterstatus() {
@@ -87,6 +87,7 @@ function sendmsg() {
         const waitsendmsg = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', sendmsg1);
         waitsendmsg.then(msgenviada);
         waitsendmsg.catch(erroconect);
+        
     }
 }
 
@@ -104,6 +105,7 @@ function erroconect() {
     clearInterval(intermanter);
     const ulmsg = document.querySelector('.mensagens');
     ulmsg.innerHTML = '';
+    window.location.reload();
 }
 
 
