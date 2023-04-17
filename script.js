@@ -28,7 +28,7 @@ function entradaok() {
 function getmsg() {
     const msg = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages');
     msg.then(rendermsg);
-}
+    }
 
 function rendermsg(msg) {
     msgserver = msg.data;
@@ -87,8 +87,7 @@ function sendmsg() {
         const waitsendmsg = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', sendmsg1);
         waitsendmsg.then(msgenviada);
         waitsendmsg.catch(erroconect);
-        
-    }
+        }
 }
 
 function msgenviada() {

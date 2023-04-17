@@ -17,7 +17,6 @@
         width: 100%;
         z-index: 1000;
         gap: 30px;
-
     }
 
     .entrar img {
@@ -45,7 +44,6 @@
         width: 109px;
         background: #E7E7E7;
         border-color: #E7E7E7;
-
         border-radius: 9px;
     }
 
@@ -63,7 +61,6 @@
         top: 0;
         left: 0;
         z-index: 2;
-
     }
 
     .topo img {
@@ -72,7 +69,6 @@
         left: 22px;
         top: 16px;
         border-radius: 0px;
-
     }
 
     .topo ion-icon {
@@ -81,7 +77,6 @@
         left: 2px;
         top: 7px;
         border-radius: 0px;
-
     }
 
     body {
@@ -108,11 +103,9 @@
 
     textarea {
         font-family: 'Righteous', cursive;
-
         font-style: italic;
         font-size: 18px;
         color: #000000;
-
     }
 
     .footer ion-icon {
@@ -136,7 +129,6 @@
 
     .mensagens {
         margin-top: 106px;
-
         padding-bottom: 100px;
     }
 
@@ -161,7 +153,6 @@
         padding-bottom: 7px;
         display: flex;
         flex-wrap: wrap;
-
     }
 
     .from,
@@ -169,7 +160,6 @@
         color: #000000;
         font-style: normal;
         font-weight: 700;
-
     }
 
     h3 {
@@ -182,7 +172,177 @@
         align-items: center;
         Line-height: 16px;
         font-size: 14px;
-
-
     }
+}
+* {
+    box-sizing: border-box;
+}
+
+.entrar {
+    position: fixed;
+    background: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    gap: 30px;
+}
+
+.entrar img {
+    margin-top: 72px;
+    margin-bottom: 94px;
+    width: 130px;
+    height: 92px;
+}
+
+.entrar input {
+    text-align: center;
+    font-size: 18px;
+    color: #AEAEAE;
+    border: 1px solid #D7D7D7;
+    background: #ffffff;
+    border-radius: 4px;
+    width: 261px;
+    height: 54px;
+}
+
+.entrar button {
+    color: #696969;
+    font-size: 18px;
+    height: 45px;
+    width: 109px;
+    background: #E7E7E7;
+    border-color: #E7E7E7;
+    border-radius: 9px;
+}
+
+header .topo {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-shadow: 0px 4px 6px 0px #0000000D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.topo img {
+    height: 53px;
+    width: 75px;
+    left: 22px;
+    top: 16px;
+    border-radius: 0px;
+}
+
+.topo ion-icon {
+    height: 31px;
+    width: 42px;
+    left: 2px;
+    top: 7px;
+    border-radius: 0px;
+}
+
+body {
+    background: #E5E5E5;
+    font-family: 'Righteous', cursive;
+    z-index: 2;
+}
+
+footer .footer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-shadow: 0px -4px 6px 0px #0000000D;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+textarea {
+    font-family: 'Righteous', cursive;
+    font-style: italic;
+    font-size: 18px;
+    color: #000000;
+}
+
+.footer ion-icon {
+    height: 26px;
+    width: 26px;
+}
+
+.escondido {
+    position: static;
+    display: none;
+    z-index: 1;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    margin-top: 106px;
+    margin-bottom: 100px;
+}
+
+
+.mensagens {
+    margin-top: 106px;
+
+    padding-bottom: 100px;
+}
+
+.status {
+    background-color: #dcdcdc;
+}
+
+.msgchat {
+    background-color: #ffffff;
+}
+
+.time {
+    color: #AAAAAA;
+    font-style: normal;
+    font-weight: 400;
+}
+
+li {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.from,
+.to {
+    color: #000000;
+    font-style: normal;
+    font-weight: 700;
+}
+
+h3 {
+    word-break: break-word;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    Line-height: 16px;
+    font-size: 14px;
 }
